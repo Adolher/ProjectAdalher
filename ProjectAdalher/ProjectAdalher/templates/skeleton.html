@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {% block title %}{% endblock %}</title>
+    <link rel="stylesheet", href="{% static "ProjectAdalher/css/main.css" %}">
+    {% block css_sheets %}{% endblock %}
+</head>
+<body>
+    <div class="header">
+        {% block header %}
+        {% include "header.html" %}
+        {% endblock %}
+    </div>
+    <div class="sidebar">
+        {% block sidebar %}
+        {% include "sidebar.html" %}
+        {% endblock %}
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="advertising">
+        {% block advertising %}
+        {% include "advertising.html" %}
+        {% endblock %}
+    </div>
+    <div class="footer">
+        {% block footer %}
+        {% include "footer.html" %}
+        {% endblock %}
+    </div>
+
+    <script src="{% static "ProjectAdalher/js/main.js" %}"></script>
+    {% block js_scripts %}{% endblock %}
+</body>
+</html>
