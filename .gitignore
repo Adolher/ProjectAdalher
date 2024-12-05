@@ -1,7 +1,9 @@
 venv
 __pycache__
 *.sqlite3
-ProjectAdalher/ProjectAdalher/settings.py
+settings.py
 .gitconfig
 logs/*
 .config/*
+.bash_history
+ProjectAdalher/ProjectAdalher/settings.py
