@@ -2,6 +2,18 @@
     --sc_middle: 2;
     --ca_middle: 8;
     --end: 9;
+
+    --base: 47;
+    --root_colour: rgb(var(--base), var(--base), var(--base));
+    
+    --sub_base_content: 20;
+    --content_colour: rgb(calc(var(--base) - var(--sub_base_content)), calc(var(--base) - var(--sub_base_content)), calc(var(--base) - var(--sub_base_content)));
+
+    --sub_base_contrast: 30;
+    --contrast_colour: rgb(calc(var(--base) - var(--sub_base_contrast)), calc(var(--base) - var(--sub_base_contrast)), calc(var(--base) - var(--sub_base_contrast)));
+
+    --add_text_colour: 127;
+    --text_root_colour: rgb(calc(var(--base) + var(--add_text_colour)), calc(var(--base) + var(--add_text_colour)), calc(var(--base) + var(--add_text_colour)));
 }
 
 body {
@@ -11,21 +23,23 @@ body {
     grid-template-columns: repeat(12%, 8);
     gap: 5px;
 
-    background-color: lightseagreen;
+    background-color: var(--root_colour);
 }
 
 .header {
     grid-column: 1/var(--end);
     grid-row: 1/2;
     
-    background-color: rgb(42, 13, 109);
+    background-color: var(--contrast_colour);
+    color:  var(--text_root_colour);
 }
 
 .sidebar {
     grid-column: 1/var(--sc_middle);
     grid-row: 2/span 4;
     
-    background-color: rgb(42, 13, 109);
+    background-color: var(--contrast_colour);
+    color:  var(--text_root_colour);
 }
 
 .content{
@@ -33,7 +47,8 @@ body {
     grid-column: var(--sc_middle)/8;
     grid-row: 2/span 3;
     
-    background-color: rgb(67, 19, 179);
+    background-color: var(--content_colour);
+    color:  var(--text_root_colour);
 }
 
 .advertising{
@@ -41,11 +56,13 @@ body {
     grid-row: 2/span 3;
     
     background-color: rgb(107, 71, 192);
+    color: rgb(33, 251, 12);
 }
 
 .footer {
     grid-column: var(--sc_middle)/var(--end);
     grid-row: 5/6;
     
-    background-color: rgb(42, 13, 109);
+    background-color: var(--contrast_colour);
+    color:  var(--text_root_colour);
 }
