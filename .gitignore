@@ -6,4 +6,5 @@ settings.py
 logs/*
 .config/*
 .bash_history
-ProjectAdalher/ProjectAdalher/settings.py
+ProjectAdalher/Home/migrations
+ProjectAdalher/ProjectAdalher/.env
