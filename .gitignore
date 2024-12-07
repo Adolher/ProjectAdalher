@@ -8,3 +8,6 @@ __pycache__
 logs/*
 ProjectAdalher/Home/migrations
 ProjectAdalher/ProjectAdalher/.env 
+.vscode-server
+.wget-hsts
+.dotnet
