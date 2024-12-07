@@ -3,8 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> {% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet", href="{% static "ProjectAdalher/css/main.css" %}">
+
+    <title> {% block title %}{% endblock %}</title>
     {% block css_sheets %}{% endblock %}
 </head>
 <body>
@@ -13,18 +17,23 @@
         {% include "header.html" %}
         {% endblock %}
     </div>
-    <div class="sidebar">
-        {% block sidebar %}
-        {% include "sidebar.html" %}
+    <div class="navbar nav_xs nav_s nav_m nav_l nav_xl">
+        {% block navbar %}
+        {% include "navbar.html" %}
         {% endblock %}
     </div>
-    <div class="content">
+    <div class="content content_xs content_s content_m content_l content_xl">
         {% block content %}
         {% endblock %}
     </div>
-    <div class="advertising">
-        {% block advertising %}
-        {% include "advertising.html" %}
+    <div class="advertising1 ad1_xs ad1_s ad1_m ad1_l ad1_xl">
+        {% block advertising1 %}
+        {% include "advertising1.html" %}
+        {% endblock %}
+    </div>
+    <div class="advertising2 ad2_xs ad2_s ad2_m ad2_l ad2_xl">
+        {% block advertising2 %}
+        {% include "advertising2.html" %}
         {% endblock %}
     </div>
     <div class="footer">
