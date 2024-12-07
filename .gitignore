@@ -1,10 +1,10 @@
 venv
 __pycache__
 *.sqlite3
-settings.py
+.bash_history
+.cache
+.config/*
 .gitconfig
 logs/*
-.config/*
-.bash_history
 ProjectAdalher/Home/migrations
-ProjectAdalher/ProjectAdalher/.env
+ProjectAdalher/ProjectAdalher/.env 
