@@ -8,8 +8,7 @@
 
     /* from up to down grid-variables */
     --top: 1;
-    --header_botton: 3;
-    --nav_botton: 4;
+    --header_botton: 4;
     --ad1_botton: 6;
     --ad2_top: 10;
     --footer_top: 12;
@@ -17,17 +16,12 @@
     
 
     /* colour variables */
-    --base: 47;
-    --root_colour: rgb(var(--base), var(--base), var(--base));
-    
-    --sub_base_content: 20;
-    --content_colour: rgb(calc(var(--base) - var(--sub_base_content)), calc(var(--base) - var(--sub_base_content)), calc(var(--base) - var(--sub_base_content)));
-
-    --sub_base_contrast: 30;
-    --contrast_colour: rgb(calc(var(--base) - var(--sub_base_contrast)), calc(var(--base) - var(--sub_base_contrast)), calc(var(--base) - var(--sub_base_contrast)));
-
-    --add_text_colour: 127;
-    --text_root_colour: rgb(calc(var(--base) + var(--add_text_colour)), calc(var(--base) + var(--add_text_colour)), calc(var(--base) + var(--add_text_colour)));
+    --main_color: #111111;
+    --background_color: #222222;
+    --text_color: #ffffff;
+    --contrast_color: #daff3e;
+    --highlighted_background: var(--contrast_color);
+    --highlighted_text: var(--background_color);
 }
 
 * {
@@ -45,7 +39,8 @@ body {
     grid-template-rows: repeat(auto, 12);
     gap: 0.25em;
 
-    background-color: var(--root_colour);
+    background-color: var(--main_color);
+    color: var(--text_color);
 }
 
 a {
@@ -53,44 +48,47 @@ a {
     color: inherit;
 }
 
-ul {
-    list-style-type: none;
-    overflow: hidden;
-}
-
-li a {
-    display: block;
-    text-align: center;
-}
-
-li a:hover {
-    background-color: black;
-}
-
-.header {
-    padding: 1em;
+/**************************/
+/********* HEADER *********/
+/**************************/
+header {
+    padding: 2em 1em;
 
     grid-column: var(--start)/var(--end);
     grid-row: var(--top)/var(--header_botton);
     
-    background-color: var(--contrast_colour);
-    color:  var(--text_root_colour);
+    background-color: var(--background_color);
+    color: var(--contrast_color);
 }
-
+header a {
+    padding: 12px;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 7px;
+}
+header a.logo {
+    background-color: var(--highlighted_background);
+    color: var(--highlighted_text);
+    font-size: 25px;
+    font-weight: bold;
+}
+header a.nav_link:hover {
+    
+    background-color: var(--contrast_color);
+    color: var(--background_color)
+}
 .navbar {
-    padding: 0;
-    font-size: 1.1em;
-    background-color: var(--contrast_colour);
-    color:  var(--text_root_colour);
+    float: right;
 }
+/**************************/
+/**^^^^^^^ HEADER ^^^^^^^**/
+/**************************/
 
 .content{
     padding: 1em;
     
-    min-height: 50em;
-    
-    background-color: var(--content_colour);
-    color:  var(--text_root_colour);
+    min-height: 90em;
+    color: inherit;
 }
 
 .advertising1{
@@ -98,10 +96,7 @@ li a:hover {
 
     border-style: solid;
     border-width: 1px;
-    border-color:darkblue;
-        
-    background-color: var(--root_colour);
-    color: rgb(33, 251, 12);
+    border-color: var(--contrast_color);
 }
 
 .advertising2{
@@ -109,10 +104,7 @@ li a:hover {
 
     border-style: solid;
     border-width: 1px;
-    border-color: darkblue;
-        
-    background-color: var(--root_colour);
-    color: rgb(33, 251, 12);
+    border-color: var(--contrast_color);
 }
 
 .footer {
@@ -121,30 +113,19 @@ li a:hover {
     grid-column: var(--start)/var(--end);
     grid-row: var(--footer_top)/ var(--bottom);
     
-    background-color: var(--contrast_colour);
-    color:  var(--text_root_colour);
+    background-color: var(--background_color);
+    color: inherit;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .nav_xs {
-        grid-column: var(--start)/var(--end);
-        grid-row: var(--header_botton)/var(--nav_botton);
-    }
-    .nav_xs li {
-        border-right: 1px solid black;  /* Todo: Why it is not visible?*/
-    }
-    .nav_xs li a {
-        padding: 0.5em;
-        float: left;
-    }
     .content_xs {
         grid-column: var(--start)/var(--end);
         grid-row: var(--ad1_botton)/var(--ad2_top);
     }
     .ad1_xs {
         grid-column: var(--start)/var(--end);
-        grid-row: var(--nav_botton)/var(--ad1_botton);
+        grid-row: var(--header_botton)/var(--ad1_botton);
     }
     .ad2_xs {
         grid-column: var(--start)/var(--end);
@@ -154,24 +135,13 @@ li a:hover {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .nav_s {
-        grid-column: var(--start)/var(--end);
-        grid-row: var(--header_botton)/var(--nav_botton);
-    }
-    .nav_s li {
-        border-right: 1px solid black;
-    }
-    .nav_s li a {
-        padding: 0.5em;
-        float: left;
-    }
     .content_s {
         grid-column: var(--start)/var(--end);
         grid-row: var(--ad1_botton)/var(--ad2_top);
     }
     .ad1_s {
         grid-column: var(--start)/var(--end);
-        grid-row: var(--nav_botton)/var(--ad1_botton);
+        grid-row: var(--header_botton)/var(--ad1_botton);
     }
     .ad2_s {
         grid-column: var(--start)/var(--end);
@@ -182,18 +152,8 @@ li a:hover {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .nav_m {
-        grid-column: var(--start)/var(--left);
-        grid-row: var(--ad1_botton)/var(--ad2_top);
-    }
-    .nav_m li {
-        border-bottom: 1px solid black;
-    }
-    .nav_m li a {
-        float: none;
-    }
     .content_m {
-        grid-column: var(--left)/var(--end);
+        grid-column: var(--start)/var(--end);
         grid-row: var(--ad1_botton)/var(--ad2_top);
     }
     .ad1_s {
@@ -209,18 +169,8 @@ li a:hover {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .nav_l {
-        grid-column: var(--start)/var(--left);
-        grid-row: var(--ad1_botton)/var(--footer_top);
-    }
-    .nav_l li {
-        border-bottom: 1px solid black;
-    }
-    .nav_l li a {
-        float: none;
-    }
     .content_l {
-        grid-column: var(--left)/var(--right);
+        grid-column: var(--start)/var(--right);
         grid-row: var(--ad1_botton)/var(--footer_top);
     }
     .ad1_l {
@@ -236,18 +186,8 @@ li a:hover {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .nav_xl {
-        grid-column: var(--left)/var(--middle);
-        grid-row: var(--header_botton)/var(--footer_top);
-    }
-    .nav_xl li {
-        border-bottom: 1px solid black;
-    }
-    .nav_xl li a {
-        float: none;
-    }
     .content_xl {
-        grid-column: var(--middle)/var(--right);
+        grid-column: var(--left)/var(--right);
         grid-row: var(--header_botton)/var(--footer_top);
     }
     .ad1_xl {

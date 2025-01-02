@@ -1,12 +1,12 @@
 {% block header %}
 
-<h1>ProjectAdalher</h1>
+<a href="/" class="logo">ProjectAdalher</a>
 
-<p>This is the header of my website.</p>
 
-<form>
-<input type="button" onclick="chachgeTheme('light')" value="Brighter">
-<input type="button" onclick="chachgeTheme('dark')" value="Darker">
-</form>
+<div class="navbar nav_xs nav_s nav_m nav_l nav_xl">
+    {% for link in navlinks %}
+    <a href={{link.app_url}} class="nav_link">{{ link.name }}</a>
+    {% endfor %}
+</div>
 
 {% endblock %}

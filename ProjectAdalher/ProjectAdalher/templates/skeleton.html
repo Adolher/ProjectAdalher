@@ -7,26 +7,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet", href="{% static "ProjectAdalher/css/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "ProjectAdalher/css/main.css" %}">
 
     <title> {% block title %}{% endblock %}</title>
     {% block css_sheets %}{% endblock %}
 </head>
 <body>
-    <div class="header">
+    <header>
         {% block header %}
         {% include "header.html" %}
         {% endblock %}
-    </div>
-    <div class="navbar nav_xs nav_s nav_m nav_l nav_xl">
-        {% block navbar %}
-        {% include "navbar.html" %}
-        {% endblock %}
-    </div>
-    <div class="content content_xs content_s content_m content_l content_xl">
+    </header>
+    <main class="content content_xs content_s content_m content_l content_xl">
         {% block content %}
         {% endblock %}
-    </div>
+    </main>
     <div class="advertising1 ad1_xs ad1_s ad1_m ad1_l ad1_xl">
         {% block advertising1 %}
         {% include "advertising1.html" %}
@@ -37,11 +32,11 @@
         {% include "advertising2.html" %}
         {% endblock %}
     </div>
-    <div class="footer">
+    <footer class="footer">
         {% block footer %}
         {% include "footer.html" %}
         {% endblock %}
-    </div>
+    </footer>
 
     <script src="{% static "ProjectAdalher/js/main.js" %}"></script>
     {% block js_scripts %}{% endblock %}
