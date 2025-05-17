@@ -8,7 +8,7 @@ from .models import MyApps
 # Create your views here.
 def home(request):
     if len(MyApps.objects.filter(name="Home")) == 0:
-        MyApps(name="Home", app_url="").save()
+        MyApps(name="Home", app_url="/").save()
     myapps = MyApps.objects.all().values("name", "app_url")
 
     context = {
