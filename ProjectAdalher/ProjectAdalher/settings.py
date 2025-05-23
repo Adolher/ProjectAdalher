@@ -30,6 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False if os.environ.get('DEBUG') != "True" else True
 
 ALLOWED_HOSTS = ['adalher.net', 'www.adalher.net', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://*.adalher.net','https://*.127.0.0.1']
 
 
 # Application definition
